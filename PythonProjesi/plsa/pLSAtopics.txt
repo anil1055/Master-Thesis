@@ -1,0 +1,81 @@
+12 Topic - 3 Sýnýf
+0: Spor
+1: Spor
+2: Ekonomi
+3: Yaþam
+4: Ekonomi
+5: Yaþam, Spor
+6: Ekonomi
+7: Spor
+8: Yaþam
+9: Ekonomi
+10: Spor
+11: Ekonomi
+
+Konular bulundu...
+Doðruluk: %76.94444444444444
+Ekonomi : %76.66666666666667
+Magazin : %79.16666666666666
+Siyaset : %75.0
+
+20 Topic - 5 Sýnýf
+0: Magazin
+1: Magazin
+2: Siyaset
+3: Ekonomi
+4: Ekonomi
+5: Ekonomi
+6: Ekonomi
+7: Magazin
+8: Siyaset
+9: Ekonomi
+10: Yaþam
+11: Yaþam
+12: Spor
+13: Ekonomi
+14: Ekonomi
+15: Siyaset
+16: Siyaset
+17: Siyaset
+18: Spor
+19: Yaþam
+
+Doðruluk: %76.5
+Ekonomi : %85.0
+Magazin : %71.66666666666667
+Siyaset : %73.33333333333333
+Spor : %83.33333333333334
+Yaþam : %69.16666666666667
+
+21 Topic - 7 Sýnýf
+0: Ekonomi
+1: Saðlýk?
+2: Teknoloji
+3: Yaþam
+4: Saðlýk
+5: Yaþam
+6: Siyaset
+7: Spor
+8: Saðlýk
+9: Siyaset
+10: Teknoloji
+11: Ekonomi
+12: Saðlýk
+13: Magazin?
+14: Teknoloji?
+15: Teknoloji
+16: Magazin
+17: Ekonomi
+18: Spor
+19: Siyaset
+20: Yaþam
+
+Konular bulundu...
+Doðruluk: %59.88095238095238
+Ekonomi : %59.166666666666664
+Magazin : %49.166666666666664
+Siyaset : %87.5
+Spor : %64.16666666666667
+Yaþam : %46.666666666666664
+Teknoloji : %53.333333333333336
+Saðlýk : %59.166666666666664

@@ -1,0 +1,20 @@
+0: Ekonomi
+1: Ekonomi
+2: Spor
+3: Ekonomi
+4: Ekonomi
+5: Yaþam
+6: Ekonomi
+7: Ekonomi
+8: Ekonomi
+9: Ekonomi
+10: Yaþam
+11: Yaþam
+
+
+Konular bulundu...
+Doðruluk: %95.0
+Ekonomi : %99.16666666666667
+Spor: %90.0
+Yaþam: %95.83333333333334
+

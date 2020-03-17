@@ -1,0 +1,29 @@
+0: Ekonomi
+1: Siyaset
+2: Spor
+3: Ekonomi
+4: Ekonomi
+5: Siyaset
+6: Yaþam
+7: Ekonomi
+8: Ekonomi
+9: Siyaset
+10: Siyaset
+11: Ekonomi
+12: Magazin
+13: Yaþam
+14: Ekonomi
+15: Ekonomi
+16: Yaþam
+17: Yaþam
+18: Ekonomi
+19: Siyaset
+
+
+Doðruluk: %82.16666666666667
+Ekonomi : %93.33333333333333
+Magazin : %91.66666666666666
+Siyaset : %99.16666666666667
+Spor : %54.166666666666664
+Yaþam : %72.5
+

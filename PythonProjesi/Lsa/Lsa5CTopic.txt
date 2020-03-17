@@ -1,0 +1,38 @@
+0: Spor
+1: Siyaset
+2: Ekonomi
+3: Yaþam
+4: Ekonomi
+5: Magazin?
+6: Siyaset
+7: Ekonomi
+8: Spor?Ekonomi
+9: Yaþam?Siyaset
+10: Siyaset?Yaþam
+11: Ekonomi
+12: Siyaset?
+13: Ekonomi
+14: Spor
+15: Yaþam
+16: Ekonomi
+17: Magazin
+18: Ekonomi?
+19: Magazin
+
+20 Topic
+Konular bulundu...
+Doðruluk: %85.33333333333334
+Ekonomi : %77.5
+Magazin : %83.33333333333334
+Siyaset : %84.16666666666667
+Spor : %89.16666666666667
+Yaþam : %92.5
+
+10 Topic
+Konular bulundu...
+Doðruluk: %87.16666666666667
+Ekonomi : %71.66666666666667
+Magazin : %93.33333333333333
+Siyaset : %85.0
+Spor : %93.33333333333333
+Yaþam : %92.5

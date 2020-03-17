@@ -1,0 +1,52 @@
+15 Topic - 3 Sýnýf
+0: Korku
+1: Kýzgýn
+2: Korku
+3: Mutlu
+4: Korku
+5: Mutlu
+6: Korku
+7: Mutlu
+8: Korku
+9: Mutlu
+10: Mutlu
+11: Mutlu
+12: Mutlu
+13: Korku
+14: Kýzgýn
+
+Konular bulundu...
+Doðruluk: %81.45833333333333
+Ekonomi : %61.875
+Magazin : %92.5
+Siyaset : %90.0
+
+20 Topic - 5 Sýnýf
+0: Üzgün
+1: Mutlu
+2: Mutlu
+3: Üzgün
+4: Korku
+5: Mutlu
+6: Üzgün
+7: Sürpriz
+8: Korku
+9: Mutlu
+10: Mutlu
+11: Kýzgýn
+12: Kýzgýn
+13: Mutlu
+14: Korku
+15: Üzgün
+16: Sürpriz
+17: Korku
+18: Sürpriz
+19: Sürpriz
+
+Konular bulundu...
+Doðruluk: %63.125
+Ekonomi : %48.125
+Magazin : %62.5
+Siyaset : %83.125
+Spor : %52.5
+Yaþam : %69.375

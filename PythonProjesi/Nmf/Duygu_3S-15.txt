@@ -1,0 +1,21 @@
+0: Korku
+1: Kýzgýn
+2: Mutlu
+3: Kýzgýn
+4: Korku
+5: Mutlu
+6: Korku
+7: Mutlu
+8: Kýzgýn
+9: Kýzgýn
+10: Mutlu
+11: Kýzgýn
+12: Kýzgýn
+13: Kýzgýn
+14: Kýzgýn
+
+Doðruluk: %89.58
+Kýzgýn: %97.5
+Korku: %78.75
+Mutlu: %92.5
+

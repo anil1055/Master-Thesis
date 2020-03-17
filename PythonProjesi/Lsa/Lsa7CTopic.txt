@@ -1,0 +1,32 @@
+0: Spor
+1: Teknoloji
+2: Siyaset
+3: Ekonomi
+4: Yaþam
+5: Teknoloji
+6: Ekonomi
+7: Magazin
+8: Siyaset
+9: Saðlýk
+10: Ekonomi
+11: Spor
+12: Teknoloji
+13: Siyaset?
+14: Yaþam
+15: Ekonomi
+16: Magazin, Teknoloji?
+17: Ekonomi
+18: Ekonomi
+19: Siyaset
+20: Teknoloji
+
+21 Topic
+Konular bulundu...
+Doðruluk: %81.30952380952381
+Ekonomi : %89.16666666666667
+Magazin : %81.66666666666667
+Siyaset : %91.66666666666666
+Spor : %75.83333333333333
+Yaþam : %83.33333333333334
+Teknoloji : %61.66666666666667
+Saðlýk : %85.83333333333333

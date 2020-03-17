@@ -1,0 +1,27 @@
+0: Korku
+1: Þaþkýn
+2: Þaþkýn
+3: Kýzgýn
+4: Þaþkýn
+5: Kýzgýn
+6: Mutlu
+7: Þaþkýn
+8: Üzgün
+9: Mutlu
+10: Üzgün
+11: Kýzgýn
+12: Þaþkýn
+13: Korku
+14: Þaþkýn
+15: Korku
+16: Mutlu
+17: Þaþkýn
+18: Üzgün
+19: Mutlu
+
+Doðruluk: %82.25
+Kýzgýn: %68.75
+Korku: %88.75
+Mutlu: %97.5
+Þaþkýn: %58.125
+Yaþam : %98.125

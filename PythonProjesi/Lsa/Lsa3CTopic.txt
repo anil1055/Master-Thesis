@@ -1,0 +1,20 @@
+0: Spor
+1: Ekonomi
+2: Yaþam
+3: Ekonomi
+4: Ekonomi
+5: Spor
+6: Ekonomi,Yaþam?
+7: Ekonomi
+8: Ekonomi
+9: Spor
+10: Ekonomi
+11: Yaþam
+
+
+12 Topic
+Konular bulundu...
+Doðruluk: %90.83333333333333
+Ekonomi : %90.83333333333333
+Magazin : %98.33333333333333
+Siyaset : %83.33333333333334

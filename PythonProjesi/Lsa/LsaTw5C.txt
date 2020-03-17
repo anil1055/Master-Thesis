@@ -1,0 +1,28 @@
+0: Korku
+1: Sürpriz
+2: Sürpriz
+3: Mutlu
+4: Sürpriz
+5: Kýzgýn
+6: Üzgün
+7: Sürpriz
+8: Mutlu
+9: Mutlu
+10: Korku
+11: Sürpriz
+12: Mutlu
+13: Üzgün
+14: Kýzgýn
+15: Kýzgýn
+16: Üzgün
+17: Kýzgýn
+18: Üzgün
+19: Üzgün
+
+Konular bulundu...
+Doðruluk: %87.0
+Ekonomi : %93.75
+Magazin : %85.0
+Siyaset : %80.625
+Spor : %90.0
+Yaþam : %85.625

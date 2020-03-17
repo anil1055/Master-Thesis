@@ -1,0 +1,24 @@
+=== Summary ===
+
+Correctly Classified Instances        2310               96.25   %
+Kappa statistic                          0.9437
+Mean absolute error                      0.0465
+Root mean squared error                  0.138 
+Relative absolute error                 10.4712 %
+Root relative squared error             29.2639 %
+Total Number of Instances             2400     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,950    0,011    0,978      0,950    0,964      0,946    0,997     0,994     kizgin
+                 0,971    0,023    0,955      0,971    0,963      0,944    0,996     0,994     korku
+                 0,966    0,023    0,956      0,966    0,961      0,941    0,997     0,995     mutlu
+Weighted Avg.    0,963    0,019    0,963      0,963    0,963      0,944    0,997     0,994     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 760  20  20 |   a = kizgin
+   7 777  16 |   b = korku
+  10  17 773 |   c = mutlu

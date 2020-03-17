@@ -1,0 +1,21 @@
+0: Korku
+1: Mutlu
+2: Kýzgýn
+3: Mutlu
+4: Korku
+5: Mutlu
+6: Mutlu
+7: Kýzgýn
+8: Kýzgýn
+9: Korku
+10: Kýzgýn
+11: Kýzgýn
+12: Kýzgýn
+13: Kýzgýn
+14: Mutlu
+
+Konular bulundu...
+Doðruluk: %95.41666666666667
+Ekonomi : %100.0
+Magazin : %89.375
+Siyaset : %96.875
