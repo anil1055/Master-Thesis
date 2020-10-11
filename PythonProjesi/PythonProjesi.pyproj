@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7148504c-7cb7-4126-80d3-b575192c24da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LdaProject\HaberlerModel.py</StartupFile>
+    <StartupFile>Lsa\LsaCoherence.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,13 +22,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Lda2vecData\lda2vec_model.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Lda2vecData\lda2vec_run.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Lda2vecData\lda2vec_start.py" />
     <Compile Include="Nmf\NmfIslem.py">
       <SubType>Code</SubType>
     </Compile>
@@ -107,24 +100,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LdaProject\pyLDAvisDraw.py" />
-    <Compile Include="YapayZeka\baslangic.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="YapayZeka\main.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
     <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Lda2vecData\" />
     <Folder Include="Lsa\" />
     <Folder Include="Nmf\" />
     <Folder Include="pLsa\" />
     <Folder Include="ÖrnekKodlar\" />
-    <Folder Include="YapayZeka\" />
     <Folder Include="LdaProject\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
