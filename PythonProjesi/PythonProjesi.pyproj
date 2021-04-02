@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7148504c-7cb7-4126-80d3-b575192c24da</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lsa\LsaCoherence.py</StartupFile>
+    <StartupFile>LdaProject\ModelTestEtme.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

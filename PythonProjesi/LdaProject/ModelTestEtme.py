@@ -28,11 +28,14 @@ import mIslemler
         dictionary, corpus = mIslemler.cumleAyristirma(test_doc, tr_verb, k, True)
         texts = mIslemler.texts
 """
-
+#doc_set = mIslemler.dosyaOkuma("HaberlerWeka5C.txt")
+#dictionary, corpus = mIslemler.cumleAyristirma(doc_set, 2, True)
+mIslemler.model_name = "TRHaber1LDA"
+mIslemler.arffOlustur(20, "HaberlerZemberek", "HaberlerWeka5C.txt")
+mIslemler.csvFile(20, 'Haberler2Stage5C')
 dict = gensim.corpora.Dictionary.load('Duygu5CYStage3.dict')
 corpus = gensim.corpora.MmCorpus('Duygu5CYStage3.mm')
 lda = gensim.models.LdaModel.load('Duygu5CYStage3.model')
-
 print(lda.show_topics(num_topics=50, num_words=15))
 
 mIslemler.model_name = "DuyguS2Test"

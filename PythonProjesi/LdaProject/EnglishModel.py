@@ -7,25 +7,34 @@ import gensim
 from gensim import corpora, models
 from nltk.stem.porter import PorterStemmer
 
-doc_set = mIslemler.dosyaOkuma("uci-news.txt")
-mIslemler.arffOlustur(40, "uci-news5CStage2", "uci-news5C.txt")
-mIslemler.model_name = "uci-news5C"
+"""Coherence için topic oluşturma
+doc_set = mIslemler.dosyaOkuma('uci-news5C.txt')
+mIslemler.model_name = 'Uci5-LDA'
 dictionary, corpus = mIslemler.englishSentence(doc_set)
-#mIslemler.modelOlusturmaTopic(15, corpus, dictionary, True)
-#mIslemler.boundPerplex(corpus, dictionary)
+for topic in range(10,55,5):
+    mIslemler.modelOlusturmaTopic(topic, corpus, dictionary, False)
+"""
 
-#Bound Perplexity hesabı ve Model oluşum
-mIslemler.modelOlusturmaTopic(15, corpus, dictionary, True)
-dictionary = gensim.corpora.Dictionary.load('uci-news5CStage2.dict')
-corpus = gensim.corpora.MmCorpus('uci-news5CStage2.mm')
+topic_num = 40
+doc_set = mIslemler.dosyaOkuma("uci-news5C.txt")
+mIslemler.model_name = "Uci5-LDA"
+dictionary, corpus = mIslemler.englishSentence(doc_set)
+#mIslemler.modelOlusturmaTopic(topic_num, corpus, dictionary, False)
+dictionary = gensim.corpora.Dictionary.load('Uci5-LDA.dict')
+corpus = gensim.corpora.MmCorpus('Uci5-LDA.mm')
+mIslemler.modelOlusturmaTopic(topic_num, corpus, dictionary, True, False, "Uci5-2LDA")
+dictionary = gensim.corpora.Dictionary.load('Uci5-2LDA.dict')
+corpus = gensim.corpora.MmCorpus('Uci5-2LDA.mm')
+mIslemler.modelOlusturmaTopic(topic_num, corpus, dictionary, True, False, "Uci5-3LDA")
 
+"""Coherence sıralama
 trained_models = OrderedDict()
 for topic_num in range(10,55,5):
     trained_models[topic_num] = gensim.models.LdaModel.load(str(topic_num) + '.model')
-
 #Coherence işlemi
-if __name__ == '__main__':
+if __name__ == '__main__': 
     mIslemler.coherence(trained_models, dictionary)
+"""
 
 """
 mIslemler.modelOlusturmaTopic(32, corpus, dictionary, True)

@@ -34,7 +34,7 @@ def cumleAyristirma(doc, secim, bool):
     
     tr_stop = get_stop_words('turkish')
     tr_stemmer = snowballstemmer.stemmer('turkish')
-    verb = dosyaOkuma("needlessTW.txt")
+    verb = dosyaOkuma("verbsTR.txt")
     if secim == 0:
         verb = [ item[0:5] for item in verb] 
         tr_stop = [ item[0:5] for item in tr_stop]
@@ -89,13 +89,12 @@ def cumleAyristirma(doc, secim, bool):
         texts.append(stemmed_tokens)
 
     print("Cümle ayrıştırılıp texts oluşturuldu...")
-
     dictionary = corpora.Dictionary(texts)
     dictionary.save( str(model_name) + '.dict')
     corpus = [dictionary.doc2bow(text) for text in texts]
+    print("Kelime haznesi oluşturuldu...Kelime sayısı:" + str(dictionary.num_nnz))
     gensim.corpora.MmCorpus.serialize(str(model_name) + '.mm', corpus)
     print("Corpus-Dictionary oluşturuldu...")
-
     return dictionary, corpus
 
 
@@ -141,6 +140,7 @@ def englishSentence(doc):
     corpus = [dictionary.doc2bow(text) for text in texts]
     gensim.corpora.MmCorpus.serialize(str(model_name) + '.mm', corpus)
     print("Corpus-Dictionary oluşturuldu...")
+    print("Kelime haznesi oluşturuldu...Kelime sayısı:" + str(dictionary.num_nnz))
 
     return dictionary, corpus
 
@@ -194,7 +194,7 @@ def coherence_siralama(coherences, cm):
     print("\nBest: %d" % ranked[0][0])
 
 #Ldamodelin oluşumu ve döküman topici bulma
-def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound = False):
+def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound = False, new_model = ''):
     global ldamodel
     global model_name
     global texts
@@ -206,9 +206,8 @@ def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound 
         ldamodel.save(str(model_name) + '.model')
         end = time.time()
 
-        print(end-start)
-        print('Topicler')
-        print(ldamodel.show_topics(num_topics=topic_num, num_words=15))
+        print('Topics')
+        print(ldamodel.show_topics(num_topics=topic_num, num_words=25))
         print('****************')
 
         """ Cümlelerin topiklerinin bulunması
@@ -220,15 +219,14 @@ def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound 
             #print('Phi values:', phi_values)
             i += 1
         """
-
-        print("LDA modeli oluşturuldu...")
-
+        print('LDA modeli oluşturuldu...RunTime:' + str(end-start))
+        arffOlustur(topic_num, model_name, "")
     else:
-        dict = gensim.corpora.Dictionary.load(str(model_name) + '.dict')
-        corpus = gensim.corpora.MmCorpus(str(model_name) + '.mm')
+        #dict = gensim.corpora.Dictionary.load(str(model_name) + '.dict')
+        #corpus = gensim.corpora.MmCorpus(str(model_name) + '.mm')
         lda = gensim.models.LdaModel.load(str(model_name) + '.model')
 
-        agirliklar = lda.show_topics(num_topics=topic_num, num_words=1000)
+        agirliklar = lda.show_topics(num_topics=topic_num, num_words=500)
         topics = str(agirliklar).split('\'), (')
         topics[0] = str(topics[0])[2:]
 
@@ -246,7 +244,7 @@ def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound 
                 agirlik = kelime[:i]
                 k = str(kelime).rfind('"')
                 kelime = kelime[i+2:k]
-                if agirlik != "0.000":
+                if agirlik != "0.0001":
                     toplam += float(agirlik)
                     weights.append(agirlik)
                     words.append(kelime)
@@ -276,26 +274,25 @@ def modelOlusturmaTopic(topic_num, corpus, dictionary, iterative = False, bound 
             iterative_texts.append(tokens)
         
         texts = iterative_texts
-        print("Kelime haznesi oluşturuldu...")
+        print("Kelime haznesi oluşturuldu...Kelime sayısı:" + str(len(totalWords)))
 
-        model_name = str(model_name) + 'Stage2'
+        model_name = new_model
         dictionary = corpora.Dictionary(iterative_texts)
         dictionary.save( model_name + '.dict')
         corpus = [dictionary.doc2bow(text) for text in iterative_texts]
         gensim.corpora.MmCorpus.serialize(model_name + '.mm', corpus)
-        print("2-Stage Corpus-Dictionary oluşturuldu...")
-
+        print("Corpus-Dictionary oluşturuldu...")
+        ldamodel = modelOlusturmaTopic(topic_num, corpus, dictionary, False)
         if bound == True:
-            boundPerplex(corpus, dictionary)       
-        #ldamodel = modelOlusturmaTopic(topic_num, corpus, dictionary)
-
+            boundPerplex(corpus, dictionary)     
+        
     return ldamodel
 
 def arffOlustur(topic_num, model_name, txtFile):
     global texts
     lda = gensim.models.LdaModel.load(str(model_name) + '.model')
 
-    agirliklar = lda.show_topics(num_topics=topic_num, num_words=1000)
+    agirliklar = lda.show_topics(num_topics=topic_num, num_words=500)
     topics = str(agirliklar).split('\'), (')
     topics[0] = str(topics[0])[2:]
 
@@ -315,7 +312,7 @@ def arffOlustur(topic_num, model_name, txtFile):
             agirlik = kelime[:i]
             k = str(kelime).rfind('"')
             kelime = kelime[i+2:k]
-            if agirlik != "0.000":
+            if str(agirlik) != "0.0001":
                 column.append(kelime)
                 column.append(agirlik)
 
@@ -327,10 +324,10 @@ def arffOlustur(topic_num, model_name, txtFile):
         list_topic.append(rows)        
    
     print("Topic listesi oluşturuldu...")
-    doc_set = dosyaOkuma(txtFile)
+    #doc_set = dosyaOkuma(txtFile)
     #model_name = "uci-news"
     #cumleAyristirma(doc_set, 2, True)
-    englishSentence(doc_set)
+    #englishSentence(doc_set)
     
     total_words = list(set(total_words))
     sentences = texts
@@ -358,8 +355,8 @@ def arffOlustur(topic_num, model_name, txtFile):
     uci = ["business","entertain","medi","tech","sport"]
     sayi = 0
     toplam = 0
-    thefile = open('uci-news5Csv.txt', 'w')
-    thefile.write("%s\n" % weights)
+    thefile = open(str(model_name) + '.txt', 'w')
+    #thefile.write("%s\n" % weights)
     for weight in weights:
         cumle = ""
         for deger in weight:
@@ -376,7 +373,6 @@ def arffOlustur(topic_num, model_name, txtFile):
 def csvFile(topic_num, model_name):
     global texts
     lda = gensim.models.LdaModel.load(str(model_name) + '.model')
-
     agirliklar = lda.show_topics(num_topics=topic_num, num_words=250)
     topics = str(agirliklar).split('\'), (')
     topics[0] = str(topics[0])[2:]
@@ -430,7 +426,7 @@ def csvFile(topic_num, model_name):
     haber = ["kizgin","korku","mutlu","uzgun","saskin"]
     sayi = 0
     toplam = 0
-    thefile = open('TweetLDA5.txt', 'w')
+    thefile = open('TrHaberLDA.txt', 'w')
     thefile.write("%s\n" % weights)
     for weight in weights:
         cumle = ""
@@ -439,7 +435,7 @@ def csvFile(topic_num, model_name):
         cumle += haber[sayi]
         thefile.write("%s\n" % cumle)      
         toplam += 1
-        if toplam == 800: 
+        if toplam == 600: 
             sayi += 1
             toplam = 0
    
